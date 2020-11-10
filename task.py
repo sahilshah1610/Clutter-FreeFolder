@@ -51,10 +51,8 @@ class MyFileHandler(FileSystemEventHandler):
             os.makedirs(dstNewFolder)
         newFolderNameFile = dstNewFolder + '//' + fileName
         shutil.move(src, newFolderNameFile)
-        print(newFolderNameFile)
-        observer.stop()
 
-fileFolder = "F://Downloads2"
+fileFolder = "F://Downloads2"   # Paste your downloads folder location
 
 eventHandler = MyFileHandler()
 observer = Observer()
@@ -66,4 +64,3 @@ try:
 except KeyboardInterrupt:
     observer.stop()
 observer.join()
-print("here")
